@@ -9,7 +9,7 @@ int main() {
 
 	cout << "Running The Test Case" << endl;
 
-	if (c.sub(2, 3) != 5) {
+	if (c.sub(3, 2) != 1) {
 		cerr << "Failed The Test Case" << endl;
 		return 1;
 	}

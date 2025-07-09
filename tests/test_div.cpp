@@ -9,7 +9,7 @@ int main() {
 
 	cout << "Running The Test Case" << endl;
 
-	if (c.div(2, 3) != 5) {
+	if (c.div(10, 2) != 5) {
 		cerr << "Failed The Test Case" << endl;
 		return 1;
 	}

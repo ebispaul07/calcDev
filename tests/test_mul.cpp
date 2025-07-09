@@ -9,7 +9,7 @@ int main() {
 
 	cout << "Running The Test Case" << endl;
 
-	if (c.mul(2, 3) != 5) {
+	if (c.mul(2, 3) != 6) {
 		cerr << "Failed The Test Case" << endl;
 		return 1;
 	}
