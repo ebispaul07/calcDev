@@ -9,7 +9,7 @@ include_directories(inc)
 
 #add library
 
-add_library(mylib src/simplecalc.cpp)
+add_library(mylib src/calc.cpp)
 
 #main application
 

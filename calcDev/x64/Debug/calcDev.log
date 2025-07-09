@@ -1,2 +1,12 @@
-﻿  main.cpp
-  calcDev.vcxproj -> C:\Users\Administrator\Desktop\calcDev\calcDev\x64\Debug\calcDev.exe
+﻿  calc.cpp
+  main.cpp
+  test_add.cpp
+  test_div.cpp
+  test_mul.cpp
+  test_sub.cpp
+  Generating Code...
+test_add.obj : error LNK2005: main already defined in main.obj
+test_div.obj : error LNK2005: main already defined in main.obj
+test_mul.obj : error LNK2005: main already defined in main.obj
+test_sub.obj : error LNK2005: main already defined in main.obj
+C:\Users\Administrator\Desktop\calcDev\calcDev\x64\Debug\calcDev.exe : fatal error LNK1169: one or more multiply defined symbols found
