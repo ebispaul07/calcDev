@@ -1,4 +1,4 @@
-name: C++ Calculator CI
+name: C++ CI with CMake (Windows)
 
 on:
   push:
@@ -7,28 +7,28 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-test:
-    runs-on: windows-latest  # or ubuntu-latest if you prefer Linux
+  build:
+
+    runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y g++ cmake
+    - name: Setup CMake
+      uses: lukka/get-cmake@latest
 
-    - name: Create build directory
-      run: mkdir build
-
-    - name: Configure CMake
-      working-directory: ./build
-      run: cmake ..
+    - name: Configure
+      run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 
     - name: Build
-      working-directory: ./build
-      run: cmake --build .
+      run: cmake --build build --config Release
 
-    - name: Run calculator tests
-      working-directory: ./build
-      run: ctest --output-on-failure
+    - name: Run Tests
+      run: ctest --test-dir build --output-on-failure -C Release
+
+    - name: Upload Executable
+      uses: actions/upload-artifact@v4
+      with:
+        name: MyApp
+        path: build/Release/MyApp.exe
