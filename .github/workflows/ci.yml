@@ -1,0 +1,34 @@
+name: C++ Calculator CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest  # or ubuntu-latest if you prefer Linux
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y g++ cmake
+
+    - name: Create build directory
+      run: mkdir build
+
+    - name: Configure CMake
+      working-directory: ./build
+      run: cmake ..
+
+    - name: Build
+      working-directory: ./build
+      run: cmake --build .
+
+    - name: Run calculator tests
+      working-directory: ./build
+      run: ctest --output-on-failure

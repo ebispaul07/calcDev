@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+    <None Include=".github\workflows\ci.yml" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

@@ -30,6 +30,7 @@
     <ClInclude Include="inc\calc.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".github\workflows\ci.yml" />
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
