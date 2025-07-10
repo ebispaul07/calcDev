@@ -1,5 +1,5 @@
 # Calculator Application
-
+-------------------------
 ## Project Overview
 A simple C++ console-based calculator that performs:
 - Addition
